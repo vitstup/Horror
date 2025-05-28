@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(TakeLidBehavior))]
 public class LidsHandler : SomeItemsHandler<Lid>, IBehaviorHandler

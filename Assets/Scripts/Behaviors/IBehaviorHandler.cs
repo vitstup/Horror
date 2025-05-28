@@ -1,4 +1,4 @@
-public interface IBehaviorHandler
+﻿public interface IBehaviorHandler
 {
     public BehaviorHandler Handler { get; }    
 }

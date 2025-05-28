@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+п»їusing Cysharp.Threading.Tasks;
 using System.Threading;
 using UnityEngine;
 
@@ -6,9 +6,9 @@ public class SpeakingAnimator : FacialAnimator
 {
     [SerializeField] private int mouthOpenIndex = 0;
 
-    [SerializeField] private Vector2 openRange = new Vector2(10f, 60f); // от и до открытия
-    [SerializeField] private Vector2 intervalRange = new Vector2(0.05f, 0.15f); // частота смены цели
-    [SerializeField] private Vector2 changeSpeedRange = new Vector2(80f, 160f); // скорость изменения blendshape
+    [SerializeField] private Vector2 openRange = new Vector2(10f, 60f); // РѕС‚ Рё РґРѕ РѕС‚РєСЂС‹С‚РёСЏ
+    [SerializeField] private Vector2 intervalRange = new Vector2(0.05f, 0.15f); // С‡Р°СЃС‚РѕС‚Р° СЃРјРµРЅС‹ С†РµР»Рё
+    [SerializeField] private Vector2 changeSpeedRange = new Vector2(80f, 160f); // СЃРєРѕСЂРѕСЃС‚СЊ РёР·РјРµРЅРµРЅРёСЏ blendshape
 
     private CancellationTokenSource talkingToken;
 
@@ -43,7 +43,7 @@ public class SpeakingAnimator : FacialAnimator
             await UniTask.Yield(PlayerLoopTiming.Update, token);
         }
 
-        faceMesh.SetBlendShapeWeight(mouthOpenIndex, 0f); // закрыть рот в конце
+        faceMesh.SetBlendShapeWeight(mouthOpenIndex, 0f); // Р·Р°РєСЂС‹С‚СЊ СЂРѕС‚ РІ РєРѕРЅС†Рµ
     }
 
     public override void Stop()

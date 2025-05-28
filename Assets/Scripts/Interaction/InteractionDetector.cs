@@ -1,4 +1,4 @@
-using TMPro;
+ï»¿using TMPro;
 using UnityEngine;
 
 public class InteractionDetector : MonoBehaviour
@@ -41,7 +41,7 @@ public class InteractionDetector : MonoBehaviour
                 if (interactable != null && interactable.IsInteractable)
                 {
                     currentTarget = interactable;
-                    ShowHint($"Íàæìèòå {inputHandler.interactionKey}, ÷òîáû {interactable.ToDoText}");
+                    ShowHint($"ĞĞ°Ğ¶Ğ¼Ğ¸Ñ‚Ğµ {inputHandler.interactionKey}, Ñ‡Ñ‚Ğ¾Ğ±Ñ‹ {interactable.ToDoText}");
                     return;
                 }
             }

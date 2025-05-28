@@ -1,4 +1,4 @@
-public interface IBehavior
+﻿public interface IBehavior
 {
     
 }

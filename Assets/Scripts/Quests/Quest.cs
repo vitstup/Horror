@@ -1,10 +1,10 @@
-using System;
+п»їusing System;
 
 public abstract class Quest
 {
     public event Action<Quest> OnQuestStarted;
     public event Action<Quest> OnQuestCompleted;
-    public event Action<Quest> OnQuestFailed; // логики невыполнения квеста - нет. 
+    public event Action<Quest> OnQuestFailed; // Р»РѕРіРёРєРё РЅРµРІС‹РїРѕР»РЅРµРЅРёСЏ РєРІРµСЃС‚Р° - РЅРµС‚. 
 
     public abstract string questDescription { get; }
 

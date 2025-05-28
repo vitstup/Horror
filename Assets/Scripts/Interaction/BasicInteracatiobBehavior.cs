@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Outline))]
 public abstract class BasicInteracatiobBehavior : MonoBehaviour, IInteractableBehavior

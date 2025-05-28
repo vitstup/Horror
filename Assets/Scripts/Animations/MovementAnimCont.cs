@@ -1,4 +1,4 @@
-using UnityEngine;
+п»їusing UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class MovementAnimCont : MonoBehaviour
@@ -21,13 +21,13 @@ public class MovementAnimCont : MonoBehaviour
     {
         Vector3 velocity = rb.linearVelocity;
 
-        // Убираем вертикальную составляющую (прыжки, падения и т.п.)
+        // РЈР±РёСЂР°РµРј РІРµСЂС‚РёРєР°Р»СЊРЅСѓСЋ СЃРѕСЃС‚Р°РІР»СЏСЋС‰СѓСЋ (РїСЂС‹Р¶РєРё, РїР°РґРµРЅРёСЏ Рё С‚.Рї.)
         velocity.y = 0;
 
-        // Перевод в локальные координаты (относительно направления персонажа)
+        // РџРµСЂРµРІРѕРґ РІ Р»РѕРєР°Р»СЊРЅС‹Рµ РєРѕРѕСЂРґРёРЅР°С‚С‹ (РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅРѕ РЅР°РїСЂР°РІР»РµРЅРёСЏ РїРµСЂСЃРѕРЅР°Р¶Р°)
         Vector3 localVelocity = transform.InverseTransformDirection(velocity);
 
-        // Нормализация под диапазон -3..+3
+        // РќРѕСЂРјР°Р»РёР·Р°С†РёСЏ РїРѕРґ РґРёР°РїР°Р·РѕРЅ -3..+3
         forwardParam = Mathf.Lerp(forwardParam, GetParamValue(localVelocity.z), Time.deltaTime * smoothing);
         sideParam = Mathf.Lerp(sideParam, GetParamValue(localVelocity.x), Time.deltaTime * smoothing);
 

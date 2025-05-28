@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(TakeCupBehavior))]
 public class CupsHandler : SomeItemsHandler<Cup>, IBehaviorHandler

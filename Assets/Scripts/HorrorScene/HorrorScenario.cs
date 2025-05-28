@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+п»їusing Cysharp.Threading.Tasks;
 using PixelCrushers.DialogueSystem;
 using UnityEngine;
 
@@ -149,43 +149,43 @@ public class HorrorScenario : MonoBehaviour
 
     private async UniTask LookAtTarget(Transform target, float aimDuration, float holdDuration)
     {
-        // --- Инициализация начальных поворотов ---
+        // --- РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РЅР°С‡Р°Р»СЊРЅС‹С… РїРѕРІРѕСЂРѕС‚РѕРІ ---
         Quaternion startPlayerRot = player.rotation;
 
-        // направление до цели
+        // РЅР°РїСЂР°РІР»РµРЅРёРµ РґРѕ С†РµР»Рё
         Vector3 toTarget = target.position - player.position;
         Quaternion targetPlayerRot = Quaternion.Euler(0f, Quaternion.LookRotation(toTarget).eulerAngles.y, 0f);
 
-        // Поворот камеры (X) — вычисляем pitch
+        // РџРѕРІРѕСЂРѕС‚ РєР°РјРµСЂС‹ (X) вЂ” РІС‹С‡РёСЃР»СЏРµРј pitch
         float startXRot = mainCamera.transform.localEulerAngles.x;
-        startXRot = (startXRot > 180f) ? startXRot - 360f : startXRot; // нормализуем угол
+        startXRot = (startXRot > 180f) ? startXRot - 360f : startXRot; // РЅРѕСЂРјР°Р»РёР·СѓРµРј СѓРіРѕР»
 
         Vector3 camToTarget = (target.position - mainCamera.transform.position).normalized;
         float targetPitch = -Mathf.Asin(camToTarget.y) * Mathf.Rad2Deg;
-        targetPitch = Mathf.Clamp(targetPitch, -80f, 80f); // защита от дикого угла
+        targetPitch = Mathf.Clamp(targetPitch, -80f, 80f); // Р·Р°С‰РёС‚Р° РѕС‚ РґРёРєРѕРіРѕ СѓРіР»Р°
 
-        // --- Плавный поворот ---
+        // --- РџР»Р°РІРЅС‹Р№ РїРѕРІРѕСЂРѕС‚ ---
         float elapsed = 0f;
         while (elapsed < aimDuration)
         {
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / aimDuration);
 
-            // Игрок (Y)
+            // РРіСЂРѕРє (Y)
             player.rotation = Quaternion.Slerp(startPlayerRot, targetPlayerRot, t);
 
-            // Камера (X)
+            // РљР°РјРµСЂР° (X)
             float currentPitch = Mathf.Lerp(startXRot, targetPitch, t);
             mainCamera.transform.localRotation = Quaternion.Euler(currentPitch, 0f, 0f);
 
             await UniTask.Yield();
         }
 
-        // Финальное выравнивание
+        // Р¤РёРЅР°Р»СЊРЅРѕРµ РІС‹СЂР°РІРЅРёРІР°РЅРёРµ
         player.rotation = targetPlayerRot;
         mainCamera.transform.localRotation = Quaternion.Euler(targetPitch, 0f, 0f);
 
-        // --- Удержание взгляда на цели ---
+        // --- РЈРґРµСЂР¶Р°РЅРёРµ РІР·РіР»СЏРґР° РЅР° С†РµР»Рё ---
         await StareAt(target, holdDuration);
     }
 
@@ -197,19 +197,19 @@ public class HorrorScenario : MonoBehaviour
         {
             elapsed += Time.deltaTime;
 
-            // --- Поворот игрока (Y) ---
+            // --- РџРѕРІРѕСЂРѕС‚ РёРіСЂРѕРєР° (Y) ---
             Vector3 toTarget = target.position - player.position;
             Quaternion targetPlayerRot = Quaternion.Euler(0f, Quaternion.LookRotation(toTarget).eulerAngles.y, 0f);
-            player.rotation = Quaternion.Slerp(player.rotation, targetPlayerRot, 0.2f); // немного сглаживания
+            player.rotation = Quaternion.Slerp(player.rotation, targetPlayerRot, 0.2f); // РЅРµРјРЅРѕРіРѕ СЃРіР»Р°Р¶РёРІР°РЅРёСЏ
 
-            // --- Поворот камеры (X) ---
+            // --- РџРѕРІРѕСЂРѕС‚ РєР°РјРµСЂС‹ (X) ---
             Vector3 camToTarget = (target.position - mainCamera.transform.position).normalized;
             float targetPitch = -Mathf.Asin(camToTarget.y) * Mathf.Rad2Deg;
-            targetPitch = Mathf.Clamp(targetPitch, -80f, 80f); // защита от дикого угла
+            targetPitch = Mathf.Clamp(targetPitch, -80f, 80f); // Р·Р°С‰РёС‚Р° РѕС‚ РґРёРєРѕРіРѕ СѓРіР»Р°
 
             float currentX = mainCamera.transform.localEulerAngles.x;
             currentX = (currentX > 180f) ? currentX - 360f : currentX;
-            float newPitch = Mathf.Lerp(currentX, targetPitch, 0.2f); // сглаживаем
+            float newPitch = Mathf.Lerp(currentX, targetPitch, 0.2f); // СЃРіР»Р°Р¶РёРІР°РµРј
 
             mainCamera.transform.localRotation = Quaternion.Euler(newPitch, 0f, 0f);
 

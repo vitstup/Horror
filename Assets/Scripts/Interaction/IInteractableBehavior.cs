@@ -1,4 +1,4 @@
-public interface IInteractableBehavior : IBehavior
+﻿public interface IInteractableBehavior : IBehavior
 {
     public bool IsInteractable { get; }
 

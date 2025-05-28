@@ -1,6 +1,6 @@
-public class TakeLidBehavior : TakeItemInteractionBehaviour<Lid>
+ï»¿public class TakeLidBehavior : TakeItemInteractionBehaviour<Lid>
 {
-    protected override string GetText => "âçÿòü êðûøêó";
+    protected override string GetText => "Ð²Ð·ÑÑ‚ÑŒ ÐºÑ€Ñ‹ÑˆÐºÑƒ";
 
-    protected override string SetText => "ïîëîæèòü êðûøêó";
+    protected override string SetText => "Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÑŒ ÐºÑ€Ñ‹ÑˆÐºÑƒ";
 }

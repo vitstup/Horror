@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 [RequireComponent(typeof(CoffeMachine))]
 public class SetUpLidBehavior : BasicInteracatiobBehavior
@@ -9,7 +9,7 @@ public class SetUpLidBehavior : BasicInteracatiobBehavior
 
     private CoffeMachine coffeMachine;
 
-    public override string ToDoText => "çàêðûòü êðûøêîé";
+    public override string ToDoText => "Ð·Ð°ÐºÑ€Ñ‹Ñ‚ÑŒ ÐºÑ€Ñ‹ÑˆÐºÐ¾Ð¹";
 
     private Cup cup;
 

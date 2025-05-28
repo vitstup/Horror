@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+п»їusing Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,17 +10,17 @@ public class BlinkEffect : MonoBehaviour
 
     public async UniTask PlayBlink()
     {
-        // Затухание в черное
+        // Р—Р°С‚СѓС…Р°РЅРёРµ РІ С‡РµСЂРЅРѕРµ
         await Fade(0f, 1f, fadeDuration);
         await UniTask.Delay((int)(holdDuration * 1000));
-        // Затухание обратно
+        // Р—Р°С‚СѓС…Р°РЅРёРµ РѕР±СЂР°С‚РЅРѕ
         await Fade(1f, 0f, fadeDuration);
     }
 
     public async UniTask PlayFromBlackBlink()
     {
         await UniTask.Delay((int)(holdDuration * 1000));
-        // Затухание обратно
+        // Р—Р°С‚СѓС…Р°РЅРёРµ РѕР±СЂР°С‚РЅРѕ
         await Fade(1f, 0f, fadeDuration);
     }
 

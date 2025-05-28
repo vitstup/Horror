@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public abstract class TakeItemInteractionBehaviour<T> : BasicInteracatiobBehavior where T : MonoBehaviour

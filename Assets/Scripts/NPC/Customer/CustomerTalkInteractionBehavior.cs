@@ -1,4 +1,4 @@
-using PixelCrushers.DialogueSystem.Wrappers;
+ï»¿using PixelCrushers.DialogueSystem.Wrappers;
 using UnityEngine;
 
 [RequireComponent(typeof(DialogueSystemTrigger))]
@@ -14,7 +14,7 @@ public class CustomerTalkInteractionBehavior : BasicInteracatiobBehavior
 
     private DialogueSystemTrigger dialogSystem;
 
-    public override string ToDoText => "ïîãîâîðèòü";
+    public override string ToDoText => "Ð¿Ð¾Ð³Ð¾Ð²Ð¾Ñ€Ð¸Ñ‚ÑŒ";
 
     private bool playerIsInFrontOf;
 

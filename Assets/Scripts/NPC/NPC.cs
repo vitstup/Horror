@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(MovementAI))]
 [RequireComponent(typeof(CustomerTalkInteractionBehavior))]

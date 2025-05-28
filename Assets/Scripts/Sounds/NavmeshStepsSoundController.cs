@@ -1,4 +1,4 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
@@ -16,7 +16,7 @@ public class NavmeshStepsSoundController : MonoBehaviour
     private void Update()
     {
         Vector3 velocity = agent.velocity;
-        velocity.y = 0f; // игнорируем вертикаль
+        velocity.y = 0f; // РёРіРЅРѕСЂРёСЂСѓРµРј РІРµСЂС‚РёРєР°Р»СЊ
 
         Vector3 localVelocity = transform.InverseTransformDirection(velocity);
         float speed = localVelocity.magnitude;

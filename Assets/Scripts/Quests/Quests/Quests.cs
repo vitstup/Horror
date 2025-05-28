@@ -1,4 +1,4 @@
-using System;
+Ôªøusing System;
 using Cysharp.Threading.Tasks;
 using PixelCrushers.DialogueSystem;
 
@@ -22,7 +22,7 @@ public class WaitCustomersQuest : Quest
         Complete();
     }
 
-    public override string questDescription { get => "œÓ‰ÓÊ‰ËÚÂ ÍÎËÂÌÚÓ‚"; }
+    public override string questDescription { get => "–ü–æ–¥–æ–∂–¥–∏—Ç–µ –∫–ª–∏–µ–Ω—Ç–æ–≤"; }
 }
 
 public class TalkWithCustomerQuest : Quest
@@ -32,12 +32,12 @@ public class TalkWithCustomerQuest : Quest
         events.conversationEvents.onConversationEnd.AddListener((t) => Complete());
     }
 
-    public override string questDescription => "œÓ„Ó‚ÓËÚ¸ Ò ÍÎËÂÌÚÓÏ";
+    public override string questDescription => "–ü–æ–≥–æ–≤–æ—Ä–∏—Ç—å —Å –∫–ª–∏–µ–Ω—Ç–æ–º";
 }
 
 public class GetCupQuest : Quest
 {
-    public override string questDescription => "¬ÓÁ¸ÏËÚÂ ÒÚ‡Í‡Ì˜ËÍ";
+    public override string questDescription => "–í–æ–∑—å–º–∏—Ç–µ —Å—Ç–∞–∫–∞–Ω—á–∏–∫";
 
     public GetCupQuest(CarryItemHandler carryItems)
     {
@@ -46,7 +46,7 @@ public class GetCupQuest : Quest
 
     private async UniTask WaitForCupTaken(CarryItemHandler carryItems)
     {
-        await UniTask.WaitUntil(() => carryItems.HasItem && carryItems.carriedItem.TryGetComponent<Cup>(out var cup)); // Ú‡Í ÒÂ·Â ÔÓËÁ‚Ó‰ËÚÂÎ¸ÌÓÒÚ¸, ÌÓ ‚ ˆÂÎÓÏ ÔËÏÂÏÎËÏÓ. ƒ‡·˚ ÌÂ ÛÒÎÓÊÌˇÚ¸ Ë·Ó ‚ÂÏÂÌË Ï‡ÎÓ ÓÒÚ‡‚Î˛ Ú‡Í.
+        await UniTask.WaitUntil(() => carryItems.HasItem && carryItems.carriedItem.TryGetComponent<Cup>(out var cup)); // —Ç–∞–∫ —Å–µ–±–µ –ø—Ä–æ–∏–∑–≤–æ–¥–∏—Ç–µ–ª—å–Ω–æ—Å—Ç—å, –Ω–æ –≤ —Ü–µ–ª–æ–º –ø—Ä–∏–º–µ–º–ª–∏–º–æ. –î–∞–±—ã –Ω–µ —É—Å–ª–æ–∂–Ω—è—Ç—å –∏–±–æ –≤—Ä–µ–º–µ–Ω–∏ –º–∞–ª–æ –æ—Å—Ç–∞–≤–ª—é —Ç–∞–∫.
 
         Complete();
     }
@@ -54,7 +54,7 @@ public class GetCupQuest : Quest
 
 public class CreateCoffeQuest : Quest
 {
-    public override string questDescription => "¬ÍÎ˛˜ËÚÂ ÍÓÙÂÏ‡¯ËÌÛ, Ò‚‡ËÚÂ ÍÓÙÂ";
+    public override string questDescription => "–í–∫–ª—é—á–∏—Ç–µ –∫–æ—Ñ–µ–º–∞—à–∏–Ω—É, —Å–≤–∞—Ä–∏—Ç–µ –∫–æ—Ñ–µ";
 
     public CreateCoffeQuest(CoffeMachine coffeMachine)
     {
@@ -71,7 +71,7 @@ public class CreateCoffeQuest : Quest
 
 public class GetLidQuest : Quest
 {
-    public override string questDescription => "¬ÓÁ¸ÏËÚÂ Í˚¯Â˜ÍÛ, Á‡ÍÓÈÚÂ ÂÈ ÒÚ‡Í‡Ì˜ËÍ";
+    public override string questDescription => "–í–æ–∑—å–º–∏—Ç–µ –∫—Ä—ã—à–µ—á–∫—É, –∑–∞–∫—Ä–æ–π—Ç–µ –µ–π —Å—Ç–∞–∫–∞–Ω—á–∏–∫";
 
     public GetLidQuest(CoffeMachine coffeMachine)
     {
@@ -88,7 +88,7 @@ public class GetLidQuest : Quest
 
 public class GetCoffeQuest : Quest
 {
-    public override string questDescription => "ŒÚÌÂÒËÚÂ ÍÓÙÂ ÍÎËÂÌÚÛ";
+    public override string questDescription => "–û—Ç–Ω–µ—Å–∏—Ç–µ –∫–æ—Ñ–µ –∫–ª–∏–µ–Ω—Ç—É";
 
     public GetCoffeQuest(NPC customer)
     {

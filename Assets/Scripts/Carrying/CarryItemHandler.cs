@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -10,7 +10,7 @@ public class CarryItemHandler : MonoBehaviour
     public event Action<Pickable> OnPickableTaked;
     public event Action<Pickable, Transform> OnPickableDroped;
 
-    [SerializeField] private Transform handBone; // кость, куда крепим
+    [SerializeField] private Transform handBone; // РєРѕСЃС‚СЊ, РєСѓРґР° РєСЂРµРїРёРј
 
     [field: SerializeField] public float timeToPick { get; private set; }
 

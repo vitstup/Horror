@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -26,10 +26,10 @@ public class FloatingText : MonoBehaviour
 
         while (elapsed < lifetime)
         {
-            // Âñåãäà ïîâîðà÷èâàåòñÿ ê êàìåðå
+            // Ð’ÑÐµÐ³Ð´Ð° Ð¿Ð¾Ð²Ð¾Ñ€Ð°Ñ‡Ð¸Ð²Ð°ÐµÑ‚ÑÑ Ðº ÐºÐ°Ð¼ÐµÑ€Ðµ
             transform.rotation = Quaternion.LookRotation(transform.position - cam.position);
 
-            // Ïîäíèìàåòñÿ ââåðõ
+            // ÐŸÐ¾Ð´Ð½Ð¸Ð¼Ð°ÐµÑ‚ÑÑ Ð²Ð²ÐµÑ€Ñ…
             transform.position = Vector3.Lerp(startPos, endPos, elapsed / lifetime);
 
             elapsed += Time.deltaTime;

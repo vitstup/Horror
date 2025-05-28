@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+п»їusing Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
@@ -16,7 +16,7 @@ public class CustomerTakeCofeInteractionBehavior : BasicInteracatiobBehavior
 
     private bool givingNow;
 
-    public override string ToDoText => "отдать кофе";
+    public override string ToDoText => "РѕС‚РґР°С‚СЊ РєРѕС„Рµ";
     
     private bool playerIsInFrontOf;
 
@@ -32,7 +32,7 @@ public class CustomerTakeCofeInteractionBehavior : BasicInteracatiobBehavior
     private void Update()
     {
         isInteractable = carryingHandler.HasItem && carryingHandler.carriedItem.TryGetComponent(out Cup cup)
-            && cup.filledWithCoffe && !givingNow; // не самый производительный вариант, но из за экономии времени оставлю так
+            && cup.filledWithCoffe && !givingNow; // РЅРµ СЃР°РјС‹Р№ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЊРЅС‹Р№ РІР°СЂРёР°РЅС‚, РЅРѕ РёР· Р·Р° СЌРєРѕРЅРѕРјРёРё РІСЂРµРјРµРЅРё РѕСЃС‚Р°РІР»СЋ С‚Р°Рє
 
         Vector3 toPlayer = (player.position - transform.position).normalized;
 

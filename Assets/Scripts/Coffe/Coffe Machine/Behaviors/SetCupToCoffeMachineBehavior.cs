@@ -1,4 +1,4 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 
 [RequireComponent(typeof(CoffeMachine))]
 public class SetCupToCoffeMachineBehavior : BasicInteracatiobBehavior
@@ -11,7 +11,7 @@ public class SetCupToCoffeMachineBehavior : BasicInteracatiobBehavior
 
     private Cup cup;
 
-    public override string ToDoText => "ÔÓÒÚ‡‚ËÚ¸ ÒÚ‡Í‡Ì˜ËÍ";
+    public override string ToDoText => "–ø–æ—Å—Ç–∞–≤–∏—Ç—å —Å—Ç–∞–∫–∞–Ω—á–∏–∫";
 
     protected override void OnAwake()
     {

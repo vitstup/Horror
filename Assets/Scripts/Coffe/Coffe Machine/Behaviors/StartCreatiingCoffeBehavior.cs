@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+Ôªøusing Cysharp.Threading.Tasks;
 using UnityEngine;
 
 [RequireComponent(typeof(CoffeMachine))]
@@ -16,7 +16,7 @@ public class StartCreatiingCoffeBehavior : BasicInteracatiobBehavior
 
     private Cup cup;
 
-    public override string ToDoText => "Ò‚‡ËÚ¸ ÍÓÙÂ";
+    public override string ToDoText => "—Å–≤–∞—Ä–∏—Ç—å –∫–æ—Ñ–µ";
 
     public void SetInitData(Cup cup)
     {

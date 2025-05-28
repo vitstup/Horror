@@ -1,6 +1,6 @@
-public class TakeCupBehavior : TakeItemInteractionBehaviour<Cup>
+Ôªøpublic class TakeCupBehavior : TakeItemInteractionBehaviour<Cup>
 {
-    protected override string GetText => "‚ÁˇÚ¸ ÒÚ‡Í‡Ì˜ËÍ";
+    protected override string GetText => "–≤–∑—è—Ç—å —Å—Ç–∞–∫–∞–Ω—á–∏–∫";
 
-    protected override string SetText => "ÔÓÎÓÊËÚ¸ ÒÚ‡Í‡Ì˜ËÍ";
+    protected override string SetText => "–ø–æ–ª–æ–∂–∏—Ç—å —Å—Ç–∞–∫–∞–Ω—á–∏–∫";
 }
