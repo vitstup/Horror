@@ -1,36 +1,24 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-[RequireComponent(typeof(MovementAI))]
-[RequireComponent(typeof(CustomerTalkInteractionBehavior))]
-[RequireComponent(typeof(CustomerTakeCofeInteractionBehavior))]
 public class NPC : MonoBehaviour, IBehaviorHandler
 {
-    private BehaviorHandler handler = new BehaviorHandler();
+    protected BehaviorHandler handler = new BehaviorHandler();
 
     public BehaviorHandler Handler => handler;
 
-    public CustomerTalkInteractionBehavior talkBeh { get; private set; }
-    public CustomerTakeCofeInteractionBehavior takeCoffeBeh { get; private set; }
-
-    [field: SerializeField] public Transform head { get; private set; }
-
-    public bool ordered { get; private set; }
-
-    private void Awake()
+    protected virtual void Awake()
     {
-        talkBeh = GetComponent<CustomerTalkInteractionBehavior>();
-        takeCoffeBeh = GetComponent<CustomerTakeCofeInteractionBehavior>();
-
-        handler.RegisterBehavior(talkBeh);
-
-        handler.RegisterBehavior(GetComponent<IMovableBehavior>());
+        RegisterBehs();
     }
 
-    private void Update()
+    protected virtual void RegisterBehs()
     {
-        if (takeCoffeBeh.IsInteractable && ordered)
-            handler.RegisterBehavior(takeCoffeBeh);
-    }
+        var movableBeh = GetComponent<IMovableBehavior>();
+        if (movableBeh != null)
+            handler.RegisterBehavior(movableBeh);
 
-    public void Order() => ordered = true;
+        var interactionBeh = GetComponent<IInteractableBehavior>();
+        if (interactionBeh != null)
+            handler.RegisterBehavior(interactionBeh);
+    }
 }
